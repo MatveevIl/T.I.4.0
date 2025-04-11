@@ -1,0 +1,9 @@
+.btns{
+    display: inline-block;
+    padding: 10px 15px;
+    background: #446c4b;
+    border-radius: 0.4em;
+    color: #d7f9db;
+    text-decoration: none;
+    text-align: center;
+}

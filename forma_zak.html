@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/settings.png" />
+    <title>СтанШеринг</title>
+    <!--<title>Document</title>-->
+</head>
+<body background="img/stan.gif"  style="background: url(img/stan.gif) no-repeat center center fixed;background-size: cover;">
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const phoneRadio = document.getElementById('phone');
+  const telegramRadio = document.getElementById('telegram');
+  const whatsappRadio = document.getElementById('whatsapp');
+  const vkRadio = document.getElementById('vk');
+
+  const phoneField = document.getElementById('phone_field');
+  const telegramField = document.getElementById('telegram_field');
+  const whatsappField = document.getElementById('whatsapp_field');
+  const vkField = document.getElementById('vk_field');
+
+
+  function updateContactFields() {
+    if (phoneRadio.checked) {
+      phoneField.style.display = 'block';
+      telegramField.style.display = 'none';
+      whatsappField.style.display = 'none';
+      vkField.style.display = 'none';
+      document.getElementById('phone_number').required = true;
+      document.getElementById('telegram_username').required = false;
+      document.getElementById('whatsapp_field').required = false;
+      documet.getElementById('vk_field').required = false;
+
+    } else if (telegramRadio.checked) {
+      telegramField.style.display = 'block';
+      phoneField.style.display = 'none';
+      whatsappField.style.display = 'none';
+      vkField.style.display = 'none';
+
+      document.getElementById('telegram_username').required = true;
+      document.getElementById('phone_number').required = false;
+      document.getElementById('whatsapp_field').required = false;
+      documet.getElementById('vk_field').required = false;
+
+    }else if (whatsappRadio.checked) {
+      telegramField.style.display = 'none';
+      phoneField.style.display = 'none';
+      whatsappField.style.display = 'block';
+      vkField.style.display = 'none';
+
+      document.getElementById('telegram_username').required = false;
+      document.getElementById('phone_number').required = false;
+      document.getElementById('whatsapp_field').required = true;
+      documet.getElementById('vk_field').required = false;
+
+    } else if (vkRadio.checked) {
+      telegramField.style.display = 'none';
+      phoneField.style.display = 'none';
+      whatsappField.style.display = 'none';
+      vkField.style.display = 'block';
+
+      document.getElementById('telegram_username').required = false;
+      document.getElementById('phone_number').required = false;
+      document.getElementById('whatsapp_field').required = false;
+      documet.getElementById('vk_field').required = true;
+
+    } else {
+      phoneField.style.display = 'none';
+      telegramField.style.display = 'none';
+      whatsappField.style.display = 'none';
+      vkField.style.display = 'none';
+
+      document.getElementById('phone_number').required = false;
+      document.getElementById('telegram_username').required = false;
+      document.getElementById('whatsapp_field').required = false;
+      documet.getElementById('vk_field').required = false;
+
+    }
+  }
+
+  phoneRadio.addEventListener('change', updateContactFields);
+  telegramRadio.addEventListener('change', updateContactFields);
+  whatsappRadio.addEventListener('change', updateContactFields);
+  vkRadio.addEventListener('change', updateContactFields);
+
+  // Инициализация при загрузке страницы
+  updateContactFields();
+});
+
+</script>
+    <nav class="navbar navbar-expand-lg" style="background-color: #76a07c;">
+      <a class="navbar-brand" href="index.html" style="color: #d7f9db">СтанШеринг</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1" style="color:#d7f9db">Электронная почта</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@company.com">
+
+        </div>
+        <div class="form-group">
+          <label for="exampleInputText" style="color:#d7f9db">Фамилия</label>
+          <input type="text" class="form-control" id="exampleInputText" placeholder="Николаев">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputText" style="color:#d7f9db">Имя</label>
+          <input type="text" class="form-control" id="exampleInputText" placeholder="Николай">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputText" style="color:#d7f9db">Отчество</label>
+          <input type="text" class="form-control" id="exampleInputText" placeholder="Николаевич">
+        </div>
+        <div>
+          <label for="exampleFormControlTextarea1" class="form-label" style="color:#d7f9db">Ваше ТЗ</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <!--<label for="exampleFormControlTextarea1" class="form-label" style="color:#d7f9db">Ваше ТЗ</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <a href="primer.html" style="display: inline-block;
+                  padding: 10px 15px;
+                  background: #446c4b;
+                  border-radius: 0.4em;
+                  color: #d7f9db;
+                  text-decoration: none;
+                  text-align: center;
+                  position: absolute;
+                  top: 60%;
+                  left: 50%;
+                  margin-right: -50%;
+                  transform: translate(-60%, -50%) " >Далее</a>
+                  <form action="primer.html" target="_blank"></form>-->
+                  <div class="form-group" style="color:#d7f9db; margin-bottom: 15px;">
+                    <div class="radio-group" style="display: flex; gap: 10px;">
+                      <input type="radio" id="phone" name="contact_method" value="phone" required>
+                      <label for="phone">Телефон</label>
+                      <input type="radio" id="telegram" name="contact_method" value="telegram" required>
+                      <label for="telegram">Telegram</label>
+                      <input type="radio" id="whatsapp" name="contact_method" value="whatsapp" required>
+                      <label for="whatsapp">WhatsApp</label>
+                      <input type="radio" id="vk" name="contact_method" value="vk" required>
+                      <label for="vk">VK</label>
+                    </div>
+                  </div>
+        <div>
+          <a href="primer.html" style="display: inline-block; padding: 10px 15px; background: #446c4b; border-radius: 0.4em; color: #d7f9db; text-decoration: none; text-align: center; position: absolute; top: 80%; left: 50%; margin-right: -50%; transform: translate(-60%, -50%) " >Отправить</a>
+          <form action="primer.html" target="_blank"></form>
+        </div>
+                  <div id="phone_field" class="form-group contact-field" style="display: none; color:#d7f9db; margin-bottom: 15px;">
+                    <label for="phone_number">Номер телефона:</label>
+                    <input type="tel" id="phone_number" name="phone_number">
+                  </div>
+            
+                  <div id="telegram_field" class="form-group contact-field" style="display: none;color:#d7f9db; margin-bottom: 15px;">
+                    <label for="telegram_username">Имя пользователя Telegram:</label>
+                    <input type="text" id="telegram_username" name="telegram_username">
+                  </div>
+
+                  <div id="whatsapp_field" class="form-group contact-field" style="display: none;color:#d7f9db; margin-bottom: 15px;">
+                    <label for="whatsapp_number">Номер телефона:</label>
+                    <input type="text" id="whatsapp_number" name="whatsapp_number">
+                  </div>
+
+                  <div id="vk_field" class="form-group contact-field" style="display: none;color:#d7f9db; margin-bottom: 15px;">
+                    <label for="vk_username">Имя пользователя, ID или ссылка:</label>
+                    <input type="text" id="vk_username" name="vk_username">
+                  </div>
+            
+      </form>
+    </div>
+      
+</body>
+</html>
