@@ -1,3 +1,11 @@
+body{
+    background: url(img/stan.gif) no-repeat center center fixed;
+    background-size: cover;
+}
+.container{
+    height: 10em;
+    position: relative;
+}
 .btns{
     display: inline-block;
     padding: 10px 15px;
@@ -6,4 +14,34 @@
     color: #d7f9db;
     text-decoration: none;
     text-align: center;
+}
+.row{
+    padding: 10px;
+}
+.form-group-c{
+    color:#d7f9db;
+    margin-bottom: 15px;
+}
+.form-group label{
+    color:#d7f9db;
+}
+
+.form-group-contact-field{
+    display: none;
+    color:#d7f9db;
+    margin-bottom: 15px;
+}
+
+.modal-body .form-group label{
+    color: black;
+}
+.tovar{
+    padding:10px;
+}
+
+.zagolovok{
+    padding: 10px 15px;
+    background:#76a07c;
+    border-radius: 0.4em;
+    color:#d7f9db;
 }
