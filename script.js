@@ -10,82 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const vkField = document.getElementById('vk_field');
   
     function updateContactFields(){
-        
+        phoneField.style.display = phoneCheck.checked ? 'block' : 'none';
+        telegramField.style.display = telegramCheck.checked ? 'block' : 'none';
+        whatsappField.style.display = whatsappCheck.checked ? 'block' : 'none';
+        vkField.style.display = vkCheck.checked ? 'block' : 'none';
+
+        document.getElementById('phone_field').required = phoneCheck.checked;
+        document.getElementById('telegram_field').required = phoneCheck.checked;
+        document.getElementById('whatsapp_field').required = phoneCheck.checked;
+        document.getElementById('vk_field').required = phoneCheck.checked;
     }
-    /*function updateContactFields() {
-      if (phoneRadio.checked) {
-        phoneField.style.display = 'block';
-        telegramField.style.display = 'none';
-        whatsappField.style.display = 'none';
-        vkField.style.display = 'none';
-        document.getElementById('phone_number').required = true;
-        document.getElementById('telegram_username').required = false;
-        document.getElementById('whatsapp_field').required = false;
-        document.getElementById('vk_field').required = false;
-  
-      } else if (telegramRadio.checked) {
-        telegramField.style.display = 'block';
-        phoneField.style.display = 'none';
-        whatsappField.style.display = 'none';
-        vkField.style.display = 'none';
-  
-        document.getElementById('telegram_username').required = true;
-        document.getElementById('phone_number').required = false;
-        document.getElementById('whatsapp_field').required = false;
-        document.getElementById('vk_field').required = false;
-  
-      }else if (whatsappRadio.checked) {
-        telegramField.style.display = 'none';
-        phoneField.style.display = 'none';
-        whatsappField.style.display = 'block';
-        vkField.style.display = 'none';
-  
-        document.getElementById('telegram_username').required = false;
-        document.getElementById('phone_number').required = false;
-        document.getElementById('whatsapp_field').required = true;
-        document.getElementById('vk_field').required = false;
-  
-      } else if (vkRadio.checked) {
-        telegramField.style.display = 'none';
-        phoneField.style.display = 'none';
-        whatsappField.style.display = 'none';
-        vkField.style.display = 'block';
-  
-        document.getElementById('telegram_username').required = false;
-        document.getElementById('phone_number').required = false;
-        document.getElementById('whatsapp_field').required = false;
-        document.getElementById('vk_field').required = true;
-  
-      } else if (phoneRadio.checked && telegramRadio.checked) {
-        phoneField.style.display = 'block';
-        telegramField.style.display = 'block';
-        whatsappField.style.display = 'none';
-        vkField.style.display = 'none';
-  
-        document.getElementById('phone_number').required = true;
-        document.getElementById('telegram_username').required = true;
-        document.getElementById('whatsapp_field').required = false;
-        document.getElementById('vk_field').required = false;
-  
-      }else {
-        phoneField.style.display = 'none';
-        telegramField.style.display = 'none';
-        whatsappField.style.display = 'none';
-        vkField.style.display = 'none';
-  
-        document.getElementById('phone_number').required = false;
-        document.getElementById('telegram_username').required = false;
-        document.getElementById('whatsapp_field').required = false;
-        document.getElementById('vk_field').required = false;
-  
-      }
-    }*/
+
+   
   
     phoneCheck.addEventListener('change', updateContactFields);
     telegramCheck.addEventListener('change', updateContactFields);
     whatsappCheck.addEventListener('change', updateContactFields);
     vkCheck.addEventListener('change', updateContactFields);
   
-    // Инициализация при загрузке страницы
+    
     updateContactFields();
   });
