@@ -45,3 +45,9 @@ body{
     border-radius: 0.4em;
     color:#d7f9db;
 }
+
+
+.card-text .form-control{
+    padding: 2px;
+    margin: 3px;
+}
