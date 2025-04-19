@@ -16,9 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
         vkField.style.display = vkCheck.checked ? 'block' : 'none';
 
         document.getElementById('phone_field').required = phoneCheck.checked;
-        document.getElementById('telegram_field').required = phoneCheck.checked;
-        document.getElementById('whatsapp_field').required = phoneCheck.checked;
-        document.getElementById('vk_field').required = phoneCheck.checked;
+        document.getElementById('telegram_field').required = telegramCheck.checked;
+        document.getElementById('whatsapp_field').required = whatsappCheck.checked;
+        document.getElementById('vk_field').required = vkCheck.checked;
+    }
+
+    function checkConditionAndShowElement(){
+        const condition = false;
+        /*if (phoneCheck.checked){
+            condition = true;
+        }*/
+        if (condition){
+            const element = document.getElementById('btns_field');
+            element.removeAttribute("hidden");
+        }
     }
 
    
@@ -30,4 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     
     updateContactFields();
+
+    window.onload = checkConditionAndShowElement;
   });

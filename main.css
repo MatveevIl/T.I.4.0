@@ -2,6 +2,10 @@ body{
     background: url(img/stan.gif) no-repeat center center fixed;
     background-size: cover;
 }
+.navbar-expand-lg{
+    background-color: #76a07c;
+    padding:10px;
+}
 .container{
     height: 10em;
     position: relative;
@@ -14,6 +18,10 @@ body{
     color: #d7f9db;
     text-decoration: none;
     text-align: center;
+    margin: 2px; 
+}
+.btns:hover{
+    color: #f8f4ff;
 }
 .row{
     padding: 10px;
@@ -35,6 +43,12 @@ body{
 .modal-body .form-group label{
     color: black;
 }
+.izg-name{
+    color:#6f4341;
+}
+.izg-name:hover{
+    color:#456b4b;
+}
 .tovar{
     padding:10px;
 }
@@ -53,5 +67,12 @@ body{
     margin-right: 3px;
 }
 .card{
+    padding: 5px;
     margin: 3px;
+
+}
+.product-links-ind{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
