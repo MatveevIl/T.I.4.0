@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const telegramField = document.getElementById('telegram_field');
     const whatsappField = document.getElementById('whatsapp_field');
     const vkField = document.getElementById('vk_field');
+    const btnField = document.getElementById('btns_field');
   
     function updateContactFields(){
         phoneField.style.display = phoneCheck.checked ? 'block' : 'none';
@@ -19,28 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('telegram_field').required = telegramCheck.checked;
         document.getElementById('whatsapp_field').required = whatsappCheck.checked;
         document.getElementById('vk_field').required = vkCheck.checked;
-    }
 
-    function checkConditionAndShowElement(){
-        const condition = false;
-        /*if (phoneCheck.checked){
-            condition = true;
-        }*/
-        if (condition){
-            const element = document.getElementById('btns_field');
-            element.removeAttribute("hidden");
-        }
+        btnField.style.display = (phoneCheck.checked || telegramCheck.checked || whatsappCheck.checked || vkCheck.checked) ? 'block' : 'none';
     }
-
-   
-  
     phoneCheck.addEventListener('change', updateContactFields);
     telegramCheck.addEventListener('change', updateContactFields);
     whatsappCheck.addEventListener('change', updateContactFields);
     vkCheck.addEventListener('change', updateContactFields);
-  
-    
     updateContactFields();
-
-    window.onload = checkConditionAndShowElement;
   });
